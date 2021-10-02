@@ -1,0 +1,122 @@
+html {
+  font-family: "Roboto", sans-serif;
+}
+
+.champion-tags span {
+  font-size: 1rem;
+  color: rgb(137, 145, 182);
+}
+
+.champion-tags img {
+  width: 1.3rem;
+  filter: brightness(0) saturate(100%) invert(80%) sepia(44%) saturate(341%)
+    hue-rotate(2deg) brightness(89%) contrast(91%);
+}
+
+/* =========== Hero =============== */
+.details-hero-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 780px;
+}
+
+.set-bg {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+}
+
+.details-hero-text {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  color: white;
+  transform: skew(20deg);
+  min-width: 600px;
+  border: 1px solid rgb(102, 102, 0);
+}
+
+.details-hero-text .details-hero-text-containt {
+  transform: skew(-20deg);
+  padding: 20px;
+}
+
+.details-hero-text .details-hero-text-containt h1 {
+  color: #ffc400;
+}
+
+.details-hero-text .details-hero-text-containt h1 span {
+  font-size: 20px;
+  color: rgb(231, 231, 231);
+}
+
+@media (max-width: 950px) {
+  .details-hero-text {
+    transform: none;
+    min-width: 0;
+  }
+
+  .details-hero-text .details-hero-text-containt {
+    transform: none;
+  }
+}
+
+/* ================ End Hero ================ */
+
+/* ================ Champion Info ============ */
+.champion-info span {
+  font-weight: bold;
+  font-size: 0.8em;
+}
+
+.champion-info hr {
+  margin: 2px 0 4px 0;
+}
+.champion-info-lore {
+  max-width: 60em;
+  min-width: 30em;
+}
+
+.champion-info p {
+  color: rgb(190, 188, 188);
+  margin-left: 15px;
+}
+
+.champion-info-details-sm {
+  margin: 10px;
+  padding: 15px;
+  border: 1px solid #b48a01;
+  border-radius: 5px;
+  max-width: 40em;
+  min-width: 28em;
+  transform: skew(20deg);
+  transition: ease-in-out 0.5s;
+}
+
+.champion-info-details-sm li {
+  font-size: 1.1em;
+  margin: 5px 0;
+  color: rgb(177, 177, 177);
+}
+
+.champion-info-allytips,
+.champion-info-enemytips {
+  transform: skew(-20deg);
+  padding: 20px;
+}
+
+@media (max-width: 1430px) {
+  .champion-info-allytips,
+  .champion-info-enemytips,
+  .champion-info-details-sm {
+    transform: none;
+  }
+}
+
+/* ============== End Champion Info ================== */
