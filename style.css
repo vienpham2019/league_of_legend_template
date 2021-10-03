@@ -36,7 +36,7 @@ html {
 .details-hero-text {
   background-color: rgba(0, 0, 0, 0.5);
   padding: 20px;
-  color: white;
+  color: rgb(255, 255, 255);
   transform: skew(20deg);
   min-width: 600px;
   border: 1px solid rgb(102, 102, 0);
@@ -100,7 +100,7 @@ html {
 }
 
 .champion-info-details-sm li {
-  font-size: 1.1em;
+  font-size: 0.9em;
   margin: 5px 0;
   color: rgb(177, 177, 177);
 }
