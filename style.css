@@ -2,6 +2,10 @@ html {
   font-family: "Roboto", sans-serif;
 }
 
+body {
+  background-color: rgb(32, 32, 32);
+}
+
 .champion-tags span {
   font-size: 1rem;
   color: rgb(137, 145, 182);
@@ -12,6 +16,57 @@ html {
   filter: brightness(0) saturate(100%) invert(80%) sepia(44%) saturate(341%)
     hue-rotate(2deg) brightness(89%) contrast(91%);
 }
+
+.text-light {
+  color: rgb(172, 172, 172) !important;
+}
+
+/* === Title ===== */
+.title {
+  font-size: 2em;
+  position: relative;
+  color: white;
+  font-family: Times, Times New Roman, serif;
+  padding: 0 1em;
+}
+
+.title::before,
+.title::after {
+  display: inline-block;
+  content: "";
+  border-top: 0.1rem solid white;
+  margin: 0 1rem;
+  transform: translateY(-1rem);
+}
+
+.title::before {
+  width: 2em;
+}
+
+.title::after {
+  width: 25em;
+}
+
+@media (max-width: 1317px) {
+  .title::after {
+    width: 15em;
+  }
+}
+
+@media (max-width: 999px) {
+  .title {
+    font-size: 1.8em;
+    padding: 0;
+  }
+  .title::before {
+    width: 1em;
+  }
+  .title::after {
+    width: 13em;
+  }
+}
+
+/* === End Title ===== */
 
 /* =========== Hero =============== */
 .details-hero-section {
@@ -111,7 +166,7 @@ html {
   padding: 20px;
 }
 
-@media (max-width: 1430px) {
+@media (max-width: 1452px) {
   .champion-info-allytips,
   .champion-info-enemytips,
   .champion-info-details-sm {
@@ -120,3 +175,58 @@ html {
 }
 
 /* ============== End Champion Info ================== */
+
+/* ============== Champion Skill Info ================ */
+
+.champion-skills-container {
+  padding: 10px 20px;
+  display: flex;
+  height: 90vh;
+  color: white;
+}
+
+.chapion-spotlight iframe {
+  margin-top: 5em;
+  width: 60vw;
+  height: 65vh;
+}
+
+.champion-skills-infomation {
+  padding: 20px;
+  overflow-y: scroll;
+}
+
+.champion-skills-infomation::-webkit-scrollbar {
+  width: 10px;
+}
+
+.champion-skills-infomation::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.champion-skills-infomation::-webkit-scrollbar-thumb {
+  box-shadow: inset 10px 10px 6px rgba(0, 174, 255, 0.3);
+  border-radius: 5px;
+}
+
+@media (max-width: 1452px) {
+  .champion-skills-container {
+    display: block;
+  }
+
+  .chapion-spotlight iframe {
+    margin: 0 0 0 3vw;
+    width: 90vw;
+    height: 90vh;
+  }
+}
+
+@media (max-width: 1363px) {
+  .chapion-spotlight iframe {
+    margin: 0;
+    width: auto;
+    height: auto;
+  }
+}
+
+/* ============== End Champion Skill Info ================ */
