@@ -2,8 +2,14 @@ html {
   font-family: "Roboto", sans-serif;
 }
 
-body {
-  background-color: rgb(32, 32, 32);
+#champion {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+#champion-container {
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .champion-tags span {
@@ -80,6 +86,10 @@ body {
   -ms-flex-pack: center;
   justify-content: center;
   height: 780px;
+  -moz-box-shadow: inset 0px -850px 500px -500px rgb(0, 0, 0);
+  -webkit-box-shadow: inset 0px -850px 500px -500px rgb(0, 0, 0);
+  -o-box-shadow: inset 0px -850px 500px -500px rgb(0, 0, 0);
+  box-shadow: inset 0px -850px 500px -500px rgb(0, 0, 0);
 }
 
 .set-bg {
@@ -125,6 +135,13 @@ body {
 /* ================ End Hero ================ */
 
 /* ================ Champion Info ============ */
+.champion-info-container {
+  -moz-box-shadow: inset 0px 850px 500px -500px rgb(0, 0, 0);
+  -webkit-box-shadow: inset 0px 850px 500px -500px rgb(0, 0, 0);
+  -o-box-shadow: inset 0px 850px 500px -500px rgb(0, 0, 0);
+  box-shadow: inset 0px 850px 500px -500px rgb(0, 0, 0);
+}
+
 .champion-info span {
   font-weight: bold;
   font-size: 0.8em;
@@ -212,6 +229,7 @@ body {
 @media (max-width: 1452px) {
   .champion-skills-container {
     display: block;
+    height: auto;
   }
 
   .chapion-spotlight iframe {
