@@ -9,7 +9,7 @@ html {
 }
 
 #champion-container {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .champion-tags span {
@@ -140,6 +140,7 @@ html {
   -webkit-box-shadow: inset 0px 850px 500px -500px rgb(0, 0, 0);
   -o-box-shadow: inset 0px 850px 500px -500px rgb(0, 0, 0);
   box-shadow: inset 0px 850px 500px -500px rgb(0, 0, 0);
+  margin-bottom: 10em;
 }
 
 .champion-info span {
@@ -150,9 +151,20 @@ html {
 .champion-info hr {
   margin: 2px 0 4px 0;
 }
+
+.champion-stats {
+  border: 1px solid #b48a01;
+}
+
+.champion-stats td {
+  padding: 10px 20px;
+  color: rgb(209, 209, 209);
+}
+
 .champion-info-lore {
-  max-width: 60em;
+  max-width: 70em;
   min-width: 30em;
+  padding: 20px;
 }
 
 .champion-info p {
@@ -196,7 +208,7 @@ html {
 /* ============== Champion Skill Info ================ */
 
 .champion-skills-container {
-  padding: 10px 20px;
+  padding: 30px 20px;
   display: flex;
   height: 90vh;
   color: white;
@@ -246,5 +258,78 @@ html {
     height: auto;
   }
 }
-
 /* ============== End Champion Skill Info ================ */
+
+/* ============== Champion Skins ================ */
+
+.champion-skins-container {
+  margin-top: 10em;
+  padding: 0 20px;
+}
+.champion-skins-element {
+  padding: 4em 2em;
+}
+
+.swiper-slide {
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+
+  color: rgb(212, 212, 212);
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.swiper-image-title-container {
+  transform: skew(20deg);
+  border: 1px solid rgb(102, 102, 0);
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+  transition: transform 0.7s;
+}
+
+.swiper-slide .swiper-image-title-container:hover {
+  transform: scale(1.08);
+}
+
+.swiper-image-title-container .swiper-image-title-content {
+  transform: skew(-20deg);
+  font-size: 20px;
+  font-family: Times, Times New Roman, serif;
+}
+
+.champion-skin-video {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.champion-skin-video iframe {
+  width: 90vw;
+  height: 90vh;
+}
+
+/* ============== End Champion Skins ================ */
