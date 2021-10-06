@@ -3,9 +3,17 @@ html {
 }
 
 #champion {
+  background-image: var(--background-splash-image);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  background-position: center;
+}
+
+@media (max-width: 420px) {
+  #champion {
+    background-image: var(--background-loading-image);
+  }
 }
 
 #champion-container {
@@ -61,7 +69,7 @@ html {
 
 @media (max-width: 999px) {
   .title {
-    font-size: 1.8em;
+    font-size: 1.4em;
     padding: 0;
   }
   .title::before {
@@ -69,6 +77,18 @@ html {
   }
   .title::after {
     width: 13em;
+  }
+}
+
+@media (max-width: 420px) {
+  .title::after {
+    width: 8em;
+  }
+}
+
+@media (max-width: 360px) {
+  .title::after {
+    width: 8em;
   }
 }
 
@@ -93,9 +113,18 @@ html {
 }
 
 .set-bg {
+  background-image: var(--background-splash-image);
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
   background-position: top center;
+}
+
+@media (max-width: 420px) {
+  .set-bg {
+    background-image: var(--background-loading-image);
+    background-position: center;
+  }
 }
 
 .details-hero-text {
@@ -143,6 +172,12 @@ html {
   margin-bottom: 10em;
 }
 
+#chart {
+  width: 600px;
+  height: 400px;
+  padding: 20px;
+}
+
 .champion-info span {
   font-weight: bold;
   font-size: 0.8em;
@@ -181,6 +216,14 @@ html {
   min-width: 28em;
   transform: skew(20deg);
   transition: ease-in-out 0.5s;
+}
+
+@media (max-width: 420px) {
+  .champion-info-lore,
+  .champion-info-details-sm {
+    max-width: auto;
+    min-width: auto;
+  }
 }
 
 .champion-info-details-sm li {
@@ -258,16 +301,23 @@ html {
     height: auto;
   }
 }
+
+@media (max-width: 280px) {
+  .chapion-spotlight iframe {
+    display: none;
+  }
+}
+
 /* ============== End Champion Skill Info ================ */
 
 /* ============== Champion Skins ================ */
 
 .champion-skins-container {
-  margin-top: 10em;
+  margin-top: 10vh;
   padding: 0 20px;
 }
 .champion-skins-element {
-  padding: 4em 2em;
+  padding: 20px 10px;
 }
 
 .swiper-slide {
@@ -293,26 +343,8 @@ html {
   -webkit-align-items: center;
   align-items: center;
 }
-.swiper-image-title-container {
-  transform: skew(20deg);
-  border: 1px solid rgb(102, 102, 0);
-  padding: 10px 20px;
-  background-color: rgba(0, 0, 0, 0.8);
-  cursor: pointer;
-  transition: transform 0.7s;
-}
 
-.swiper-slide .swiper-image-title-container:hover {
-  transform: scale(1.08);
-}
-
-.swiper-image-title-container .swiper-image-title-content {
-  transform: skew(-20deg);
-  font-size: 20px;
-  font-family: Times, Times New Roman, serif;
-}
-
-.champion-skin-video {
+/* .champion-skin-video {
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -325,6 +357,67 @@ html {
   -ms-flex-align: center;
   -webkit-align-items: center;
   align-items: center;
+} */
+
+.swiper-slide .swiper-info {
+  position: absolute;
+  z-index: 990 !important;
+  transform: skew(20deg);
+  border: 1px solid rgb(102, 102, 0);
+  border-radius: 10px;
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+  transition: transform 0.7s;
+}
+
+.swiper-slide .swiper-info .swiper-image-title-content {
+  transform: skew(-20deg);
+}
+
+.swiper-slide .swiper-info .swiper-image-title-content h2 {
+  font-family: Times, Times New Roman, serif;
+  font-size: 20px;
+}
+
+@media (max-width: 360px) {
+  .swiper-slide .swiper-info {
+    transform: none;
+  }
+  .swiper-slide .swiper-info .swiper-image-title-content {
+    transform: none;
+  }
+  .swiper-slide .swiper-info .swiper-image-title-content h2 {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 280px) {
+  .swiper-slide .swiper-info {
+    display: none;
+  }
+}
+
+.swiper-slide img {
+  width: 100%;
+}
+
+.skin-slide-splash-img {
+  display: block;
+}
+
+.skin-slide-loading-img {
+  display: none;
+}
+
+@media (max-width: 560px) {
+  .skin-slide-splash-img {
+    display: none;
+  }
+
+  .skin-slide-loading-img {
+    display: block;
+  }
 }
 
 .champion-skin-video iframe {

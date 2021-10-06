@@ -28,10 +28,10 @@
     <title>Document</title>
   </head>
   <bod> 
-      <div id="champion"style="background-image: url(http://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aatrox_0.jpg);">
+      <div id="champion" style="--background-splash-image: url(http://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aatrox_0.jpg); --background-loading-image: url(http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Aatrox_0.jpg);" >
         <div id="champion-container">
             <!-- ============= Hero ================= -->
-            <section class="details-hero-section set-bg" data-setbg="img/details/details-post.jpg" style="background-image: url(http://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aatrox_0.jpg);">
+            <section class="details-hero-section set-bg">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-6">
@@ -69,7 +69,7 @@
                 <h1 class="title">CHARACTER</h1>
 
                 <div class="champion-info d-flex flex-wrap justify-content-center align-items-center bd-highlight ">
-                    <div id="chart" style="width: 600px; height: 400px;"></div>
+                    <div id="chart" ></div>
 
                     <!-- ===== Champion Stasts ========= -->
                     <table class="text-white table-bordered my-3 champion-stats">
@@ -209,7 +209,9 @@
                             </div>
                             <div class="d-flex bd-highlight flex-wrap my-2">
                                 <small class = "mx-1">
-                                    <span class="text-light"> <i class="fas fa-circle"></i> Cooldown: </span> 14 / 12 / 10 / 8 / 6
+                                    <span class="text-light"> 
+                                        <i class="fas fa-circle"></i> 
+                                        Cooldown: </span> 14 / 12 / 10 / 8 / 6
                                     <span class="text-light">seconds</span>
                                 </small>
                                 <small class = "mx-1">
@@ -364,36 +366,30 @@
                     <div class="swiper mySwiper">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <img src="http://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aatrox_1.jpg" alt=""> 
+                                <img src="http://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aatrox_1.jpg" class="skin-slide-splash-img" alt="...">
+                                <img src="http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Aatrox_1.jpg" class="skin-slide-loading-img" alt="...">
+                                <div class="swiper-info">
+                                    <div class="swiper-image-title-content">
+                                        <h2>
+                                            Justicar Aatrox
+                                            <i class="fas fa-play mx-1"></i>
+                                        </h2>
+                                    </div>
+                                </div>
                             </div>
                             <div class="swiper-slide">
-                                <img src="http://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aatrox_2.jpg" alt="">
-                            </div>
-                            <div class="swiper-slide" style="background-image: url(http://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aatrox_3.jpg);">
-                                <div class="swiper-image-title-container">
-                                    <div class="swiper-image-title-content">Aatrox Default</div>
+                                <img src="http://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aatrox_2.jpg" class="skin-slide-splash-img" alt="...">
+                                <img src="http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Aatrox_2.jpg" class="skin-slide-loading-img" alt="...">
+                                <div class="swiper-info">
+                                    <div class="swiper-image-title-content">
+                                        <h2>
+                                            Mecha Aatrox
+                                            <i class="fas fa-play mx-1"></i>
+                                        </h2>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="swiper-slide" style="background-image: url(http://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aatrox_7.jpg);">
-                                <div class="swiper-image-title-container">
-                                    <div class="swiper-image-title-content">Aatrox Default</div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide" style="background-image: url(http://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aatrox_8.jpg);">
-                                <div class="swiper-image-title-container">
-                                    <div class="swiper-image-title-content">Aatrox Default</div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide" style="background-image: url(http://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aatrox_9.jpg);">
-                                <div class="swiper-image-title-container">
-                                    <div class="swiper-image-title-content">Aatrox Default</div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide" style="background-image: url(http://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aatrox_11.jpg);">
-                                <div class="swiper-image-title-container">
-                                    <div class="swiper-image-title-content">Aatrox Default</div>
-                                </div>
-                            </div>
+                            
                         </div>
                         <div class="swiper-button-next"></div>
                         <div class="swiper-button-prev"></div>
@@ -463,15 +459,11 @@
 
         // Swiper 
         var swiper = new Swiper(".mySwiper", {
-        pagination: {
-          el: ".swiper-pagination",
-          type: "progressbar",
-        },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-      });
+            navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+            },
+        });
        
     </script>
   </body>
