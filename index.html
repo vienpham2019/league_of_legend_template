@@ -368,7 +368,7 @@
                             <div class="swiper-slide">
                                 <img src="http://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aatrox_1.jpg" class="skin-slide-splash-img" alt="...">
                                 <img src="http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Aatrox_1.jpg" class="skin-slide-loading-img" alt="...">
-                                <div class="swiper-info">
+                                <div class="swiper-info" onClick="openSkinModal()">
                                     <div class="swiper-image-title-content">
                                         <h2>
                                             Justicar Aatrox
@@ -380,7 +380,7 @@
                             <div class="swiper-slide">
                                 <img src="http://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aatrox_2.jpg" class="skin-slide-splash-img" alt="...">
                                 <img src="http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Aatrox_2.jpg" class="skin-slide-loading-img" alt="...">
-                                <div class="swiper-info">
+                                <div class="swiper-info" onClick="openSkinModal()">
                                     <div class="swiper-image-title-content">
                                         <h2>
                                             Mecha Aatrox
@@ -394,6 +394,18 @@
                         <div class="swiper-button-next"></div>
                         <div class="swiper-button-prev"></div>
                         <div class="swiper-pagination"></div>
+                    </div>
+
+                    <div id="champion-slider-Modal" class="champion-slider-modal">
+
+                        <!-- Modal content -->
+                        <div class="champion-slider-modal-content">
+                          <span class="close" onclick="closeSkinModal()">&times;</span>
+                          <div class="champion-slider-modal-video-contanier">
+                            <iframe id="champion-slider-modal-video" class="embed-responsive-item" src="https://www.youtube.com/embed/0iiGWVhUqLA" title="..." allowfullscreen></iframe>
+                          </div>
+                        </div>
+                      
                     </div>
                 </div>
                 <!-- ===== End Skins Slider ======= -->
@@ -454,16 +466,47 @@
         
         };
 
-        var chart = new ApexCharts(document.querySelector("#chart"), options);
+        let chart = new ApexCharts(document.querySelector("#chart"), options);
         chart.render();
 
         // Swiper 
-        var swiper = new Swiper(".mySwiper", {
+        let swiper = new Swiper(".mySwiper", {
             navigation: {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
             },
         });
+
+        let body = document.querySelector("body");
+
+        let championSkinModal = document.getElementById("champion-slider-Modal");
+
+        let championSkinModalVideo = document.getElementById("champion-slider-modal-video");
+
+        const openSkinModal = () => {
+            body.style.overflow = "hidden";
+            championSkinModal.style.display = "block";
+        }
+
+        const closeSkinModal = () => {
+            body.style.overflow = "auto";
+            championSkinModal.style.display = "none";
+            resetVideoSRC(championSkinModalVideo);
+        }
+
+        window.addEventListener('click' , () => { 
+            if (event.target == championSkinModal) {
+                body.style.overflow = "auto";
+                championSkinModal.style.display = "none";
+                resetVideoSRC(championSkinModalVideo);
+            }
+        });
+
+        const resetVideoSRC = (iframe) => {
+            let {src} = iframe; 
+            iframe.src = ''; 
+            iframe.src = src; 
+        };
        
     </script>
   </body>
