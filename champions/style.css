@@ -1,0 +1,90 @@
+html {
+  font-family: "Roboto", sans-serif;
+}
+
+/* ============ Champions Container ================ */
+
+/* ==== Champion Card ======= */
+
+.champion-card {
+  margin: 0 10px;
+  height: 33em;
+}
+
+.champion-card-head {
+  position: absolute;
+  top: 110px;
+  left: 7px;
+  z-index: 2;
+  width: 70px;
+  height: 100px;
+  padding: 10px 5px 0 5px;
+  box-sizing: content-box;
+  position: relative;
+  background: rgb(158, 158, 158);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-align: center;
+  text-transform: uppercase;
+  border: 2px solid gold;
+  border-bottom: none;
+  border-top: none;
+}
+
+.champion-card-head:after,
+.champion-card-head:before {
+  content: "";
+  position: absolute;
+  top: 110px;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  padding: 0 3px;
+  border-top: 30px solid rgb(158, 158, 158);
+  border-left: 37px solid transparent;
+  border-right: 37px solid transparent;
+}
+
+.champion-card-tags {
+  margin: 5px 0;
+}
+
+.champion-card-tags span {
+  font-size: 10px;
+  font-family: Times, Times New Roman, serif;
+  color: rgb(0, 0, 0);
+}
+
+.champion-card-tags img {
+  width: 1rem;
+  filter: brightness(100) saturate(100%) invert(80%) sepia(44%) saturate(341%)
+    hue-rotate(2deg) brightness(100%) contrast(100%);
+}
+
+.champions-card-image {
+  position: relative;
+  height: 25em;
+  overflow: hidden;
+}
+
+.champion-card-info {
+  background-color: black;
+  padding: 10px;
+  color: white;
+  border-radius: 0 0 20px 0;
+}
+
+.champion-card-info h3 {
+  text-transform: uppercase;
+  font-family: Times, Times New Roman, serif;
+  padding: 0;
+  margin: 0;
+}
+
+.champion-card-info small {
+  color: rgb(167, 167, 167);
+}
+/* ==== End Champion Card ====== */
+
+/* ============= End Champions Container ================ */
