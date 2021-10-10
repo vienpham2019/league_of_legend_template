@@ -2,15 +2,189 @@ html {
   font-family: "Roboto", sans-serif;
 }
 
+.champions-container {
+  font-family: Times, Times New Roman, serif;
+}
+
+/* ============ Champions Header =================== */
+.champions-header {
+  text-transform: uppercase;
+}
+.champions-header span {
+  font-size: 20px;
+  font-weight: 500;
+}
+.champions-header h1 {
+  font-size: 50px;
+  letter-spacing: 0.2em;
+  font-weight: 800;
+  font-style: italic;
+}
+/* ============ End Champions Header =============== */
+
+/* ============ Champions Filter =================== */
+.champions-filter-container {
+  padding: 0 4em;
+}
+/* ----- Search ------ */
+.champions-filter-search-input {
+  position: relative;
+  display: flex;
+  width: 15em;
+  min-width: 100px;
+  margin: 10px;
+}
+
+.champions-filter-search-input .search {
+  border: 1px solid grey;
+  border-radius: 5px;
+  height: 35px;
+  width: 100%;
+  padding: 2px 23px 2px 30px;
+  outline: 0;
+  background-color: #f5f5f5;
+}
+
+.search-icon {
+  position: absolute;
+  top: 11px;
+  left: 8px;
+  font-size: 14px;
+  color: rgb(105, 105, 105);
+}
+
+.clear-icon {
+  position: absolute;
+  top: 9px;
+  right: 8px;
+  width: 12px;
+  cursor: pointer;
+  /* visibility: hidden; */
+}
+
+.search:hover,
+.search:focus {
+  border: 1px solid #009688;
+  background-color: white;
+}
+/* --- End Search ---- */
+
+/* --- Roles list --- */
+.champions-filter-roles {
+  display: flex;
+  list-style: none;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 0;
+}
+
+.champions-filter-roles li {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 5px 10px;
+  border: 1px solid black;
+  border-left: none;
+  cursor: pointer;
+}
+
+.champions-filter-roles li:first-child {
+  border-left: 1px solid black;
+  border-radius: 5px 0 0 5px;
+}
+
+.champions-filter-roles li:last-child {
+  border-radius: 0 5px 5px 0;
+}
+
+.champions-filter-roles li img {
+  width: 1rem;
+  filter: brightness(0) saturate(50%) invert(50%) sepia(64%) saturate(341%)
+    hue-rotate(2deg) brightness(100%) contrast(60%);
+}
+
+.champions-filter-roles li:hover {
+  border-left: 1px solid black;
+  border-color: rgb(218, 185, 0);
+}
+
+.popover-content {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  display: block;
+  z-index: 1;
+  top: 162px;
+  padding: 3px 5px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: 1px solid black;
+  font-size: 10px;
+  border-radius: 5px;
+}
+
+.champions-filter-roles li:hover .popover-content {
+  opacity: 1;
+  visibility: visible;
+}
+/* --- End Roles List --- */
+
+/* --- Dropdown ---- */
+.champions-filer-dropdown {
+  margin: 10px;
+}
+
+.champions-filer-dropdown button {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 6px 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+.champions-filer-dropdown ul {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+.champions-filer-dropdown li {
+  border-bottom: 1px solid black;
+  color: white;
+}
+
+.champions-filer-dropdown li:last-child {
+  border: none;
+}
+
+.champions-filer-dropdown img {
+  width: 1rem;
+  filter: brightness(0) saturate(50%) invert(50%) sepia(64%) saturate(341%)
+    hue-rotate(2deg) brightness(100%) contrast(60%);
+}
+
+/* --- End Dropdown --- */
+
+/* --- Reset Btn --- */
+.champions-filer-reset {
+  background-color: rgba(0, 0, 0, 0.7);
+  margin: 10px;
+  height: 35px;
+  width: 35px;
+  font-size: 13px;
+  border: 1px solid black;
+  border-radius: 5px;
+  color: rgb(255, 255, 255);
+}
+/* --- End Reset Btn --- */
+
+/* ============ End Champions Filter =============== */
+
 /* ============ Champions Container ================ */
 
-/* ==== Champion Card ======= */
+/* --- Champion Card --- */
 
 .champion-card {
   margin: 0 10px;
   height: 30em;
   width: 17em;
-  font-family: Times, Times New Roman, serif;
   border-radius: 0 0 20px 0;
   box-shadow: 10px 10px 15px black;
   transition: ease-in-out 0.2s;
@@ -91,6 +265,6 @@ html {
 .champion-card-info small {
   color: rgb(167, 167, 167);
 }
-/* ==== End Champion Card ====== */
+/* --- End Champion Card --- */
 
 /* ============= End Champions Container ================ */
