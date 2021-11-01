@@ -11,100 +11,332 @@
       crossorigin="anonymous"
     />
 
+    <!-- Font-awsome -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../champions/style.css" />
     <title>Document</title>
   </head>
   <body>
-    <div class="p-5">
-      <!-- ============= Summoner Champions Container ============= -->
-      <div class="d-flex">
-        <!-- ========= Champion Card Container ======= -->
-        <div
-          class="summoner-champion-card d-flex align-items-end flex-wrap"
-          style="
-            background-image: url(http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Aatrox_0.jpg);
-          "
-        >
-          <div class="w-100">
-            <div class="summoner-champion-card-info-title">
-              <div class="px-3">
-                <span>Aatrox</span> <br />
-                <small>The Darkin Blade</small>
+    <div
+      class="summoner"
+      style="
+        background-image: url(https://img.redbull.com/images/c_limit,w_1500,h_1000,f_auto,q_auto/redbullcom/2017/01/03/1331837749223_2/the-fields-of-justice-have-a-complicated-history);
+      "
+    >
+      <div class="summoner-container p-3">
+        <!-- ============= Summoner Infomation ============= -->
+        <div class="summoner-infomation-container px-2">
+          <div class="d-flex flex-wrap justify-content-evenly">
+            <!-- Profile Icon -->
+            <div class="pt-2 summoner-header text-center">
+              <div
+                class="
+                  summoner-header-profile-icon
+                  mx-auto
+                  d-flex
+                  align-items-center
+                "
+              >
+                <div
+                  class="summoner-profile-banner mx-auto rounded-circle"
+                  style="
+                    background-image: url(http://ddragon.leagueoflegends.com/cdn/11.20.1/img/profileicon/4571.png);
+                  "
+                ></div>
+              </div>
+              <div class="summoner-profile-level-container">
+                <div class="summoner-profile-level mx-auto">
+                  <span>145</span>
+                </div>
+              </div>
+              <h1>Soda Is A Cat</h1>
+            </div>
+            <!-- End Profile Icon -->
+
+            <!-- Summoner Rank -->
+            <div class="pt-4 text-center">
+              <div class="summoner-rank">
+                <span class="text-danger">Ranked</span>
+                <div class="">
+                  <img
+                    src="/summoner/image/ranked-emblems/Emblem_CHALLENGE.png"
+                    alt=""
+                  />
+                </div>
+                <span class="summoner-rank-tier"> Challenger I </span>
+                <br />
+                <small>1246 LP</small>
               </div>
             </div>
-            <div class="summoner-champion-card-info">
-              <div class="summoner-champion-card-info-mastery-level">
-                <img
-                  src="image/stat-icons/Champion_Mastery_Level_7_Square.png"
-                  alt=""
-                />
-              </div>
-              <div class="summoner-champion-card-info-details">
-                <span>Level 7 </span> <br />
-                <small>231875 pts</small>
+            <!-- End Summoner Rank -->
+
+            <!-- Summoner Win Lose -->
+            <div class="my-auto" id="summoner-match-win-lose-chart"></div>
+            <!-- End Summoner Win Lose -->
+
+            <!-- Summoner Statistics -->
+            <div class="w-100 text-center summoner-match-summary mt-4">
+              <h3>Statistics</h3>
+              <div class="d-flex justify-content-evenly">
+                <div id="summoner-match-roles-chart"></div>
+                <div id="summoner-match-lane-chart"></div>
               </div>
             </div>
+
+            <!-- End Summoner Statistics-->
           </div>
         </div>
-        <!-- n -->
-        <div
-          class="summoner-champion-card d-flex align-items-end flex-wrap"
-          style="
-            background-image: url(http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Nunu_0.jpg);
-          "
-        >
-          <div class="w-100">
-            <div class="summoner-champion-card-info-title">
-              <div class="px-3">
-                <span>Nunu & Willump</span> <br />
-                <small>The Boy and His Yeti</small>
+        <!-- ============= End Summoner Infomation ============= -->
+
+        <!-- ============= Summoner Infomarion Navbar ============ -->
+        <div class="summoner-info-nav">
+          <ul class="nav nav-tabs">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active">Champions</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link">Match History</button>
+            </li>
+          </ul>
+        </div>
+        <!-- ============= End Summoner Infomarion Navbar ============ -->
+
+        <!-- ============= Summoner Champions Container ============= -->
+        <div class="summoner-champions-container w-100">
+          <!-- =============== Champions Header ============ -->
+          <div class="champions-header text-center py-5">
+            <span>Choose your</span>
+            <h1>Champion</h1>
+          </div>
+          <!-- =============== End Champions Header ============ -->
+          <!-- =============== Champions Fillter =========== -->
+          <div class="champions-filter">
+            <div class="d-flex flex-wrap">
+              <!-- Search Input  -->
+              <div class="champions-filter-search-input">
+                <i class="fas fa-search search-icon"></i>
+                <input class="search" placeholder="Search" type="text" />
+                <i class="fas fa-times-circle clear-icon"></i>
               </div>
-            </div>
-            <div class="summoner-champion-card-info">
-              <div class="summoner-champion-card-info-mastery-level">
-                <img
-                  src="image/stat-icons/Champion_Mastery_Level_5_Square.png"
-                  alt=""
-                />
+              <!-- End Search Input -->
+
+              <!-- Roles Dropdown -->
+              <div class="champions-filer-dropdown">
+                <button
+                  type="button"
+                  id="dropdownMenuButton1"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  style="width: 10em"
+                >
+                  <div class="d-flex align-items-center">
+                    <img
+                      src="https://fastcdn.mobalytics.gg/assets/common/icons/lol-roles/16-any-faded.svg"
+                      alt=""
+                    />
+                    <span class="mx-4">All Roles</span>
+                    <i class="fas fa-caret-down"></i>
+                  </div>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                  <li class="dropdown-item">
+                    <div class="d-flex align-items-center">
+                      <img
+                        src="https://fastcdn.mobalytics.gg/assets/lol/images/champions-classes/fighter.svg"
+                        alt=""
+                      />
+                      <span class="mx-2">Fighter</span>
+                    </div>
+                  </li>
+                  <!--  -->
+                  <li class="dropdown-item">
+                    <div class="d-flex align-items-center">
+                      <img
+                        src="https://fastcdn.mobalytics.gg/assets/lol/images/champions-classes/mage.svg"
+                        alt=""
+                      />
+                      <span class="mx-2">Mage</span>
+                    </div>
+                  </li>
+                  <!--  -->
+                  <li class="dropdown-item">
+                    <div class="d-flex align-items-center">
+                      <img
+                        src="https://fastcdn.mobalytics.gg/assets/lol/images/champions-classes/assassin.svg"
+                        alt=""
+                      />
+                      <span class="mx-2">Assassin</span>
+                    </div>
+                  </li>
+                  <!--  -->
+                  <li class="dropdown-item">
+                    <div class="d-flex align-items-center">
+                      <img
+                        src="https://fastcdn.mobalytics.gg/assets/lol/images/champions-classes/marksman.svg"
+                        alt=""
+                      />
+                      <span class="mx-2">Marksman</span>
+                    </div>
+                  </li>
+                  <!--  -->
+                  <li class="dropdown-item">
+                    <div class="d-flex align-items-center">
+                      <img
+                        src="https://fastcdn.mobalytics.gg/assets/lol/images/champions-classes/tank.svg"
+                        alt=""
+                      />
+                      <span class="mx-2">Tank</span>
+                    </div>
+                  </li>
+                  <!--  -->
+                </ul>
               </div>
-              <div class="summoner-champion-card-info-details">
-                <span>Level 5 </span> <br />
-                <small>231875 pts</small>
+              <!-- End Roles Dropdown -->
+
+              <!-- Lane Dropdown -->
+              <div class="champions-filer-dropdown">
+                <button
+                  type="button"
+                  id="dropdownMenuButton1"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  style="width: 10em"
+                >
+                  <div class="d-flex align-items-center">
+                    <img
+                      src="https://fastcdn.mobalytics.gg/assets/common/icons/lol-roles/16-any-faded.svg"
+                      alt=""
+                    />
+                    <span class="mx-4">All Lane</span>
+                    <i class="fas fa-caret-down"></i>
+                  </div>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                  <li class="dropdown-item">
+                    <div class="d-flex align-items-center">
+                      <img
+                        src="https://fastcdn.mobalytics.gg/assets/common/icons/lol-roles/16-top-faded.svg"
+                        alt=""
+                      />
+                      <span class="mx-2">Top</span>
+                    </div>
+                  </li>
+                  <li class="dropdown-item">
+                    <div class="d-flex align-items-center">
+                      <img
+                        src="https://fastcdn.mobalytics.gg/assets/common/icons/lol-roles/16-jg-faded.svg"
+                        alt=""
+                      />
+                      <span class="mx-2">Jungle</span>
+                    </div>
+                  </li>
+                  <li class="dropdown-item">
+                    <div class="d-flex align-items-center">
+                      <img
+                        src="https://fastcdn.mobalytics.gg/assets/common/icons/lol-roles/16-mid-faded.svg"
+                        alt=""
+                      />
+                      <span class="mx-2">Mid</span>
+                    </div>
+                  </li>
+                  <li class="dropdown-item">
+                    <div class="d-flex align-items-center">
+                      <img
+                        src="https://fastcdn.mobalytics.gg/assets/common/icons/lol-roles/16-bot-faded.svg"
+                        alt=""
+                      />
+                      <span class="mx-2">Bot</span>
+                    </div>
+                  </li>
+                  <li class="dropdown-item">
+                    <div class="d-flex align-items-center">
+                      <img
+                        src="https://fastcdn.mobalytics.gg/assets/common/icons/lol-roles/16-sup-faded.svg"
+                        alt=""
+                      />
+                      <span class="mx-2">Support</span>
+                    </div>
+                  </li>
+                </ul>
               </div>
+              <!-- End Lane Dropdown -->
+
+              <!-- Sort Ratio -->
+              <fieldset class="m-2">
+                <legend class="col-form-label col m-0 p-0">
+                  Sort By Champion:
+                </legend>
+                <div class="d-flex">
+                  <div class="form-check mx-2">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="gridRadios"
+                      id="gridRadios1"
+                      value="option1"
+                      checked
+                    />
+                    <label class="form-check-label" for="gridRadios1">
+                      Level
+                    </label>
+                  </div>
+                  <div class="form-check mx-2">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="gridRadios"
+                      id="gridRadios2"
+                      value="option2"
+                    />
+                    <label class="form-check-label" for="gridRadios2">
+                      Name
+                    </label>
+                  </div>
+                  <div class="form-check mx-2">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="gridRadios"
+                      id="gridRadios3"
+                      value="option3"
+                    />
+                    <label class="form-check-label" for="gridRadios3">
+                      Points
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+              <!-- End Sort Ratio -->
+
+              <!-- Reset Filter -->
+              <div class="d-flex align-items-center">
+                <div class="champions-filer-reset d-flex align-items-center">
+                  <i class="fas fa-redo mx-auto"></i>
+                </div>
+                <small>Reset Filter</small>
+              </div>
+              <!-- End Reset Filter -->
             </div>
           </div>
-        </div>
-        <!-- n -->
-        <div
-          class="summoner-champion-card d-flex align-items-end flex-wrap"
-          style="
-            background-image: url(http://ddragon.leagueoflegends.com/cdn/img/champion/loading/MissFortune_0.jpg);
-          "
-        >
-          <div class="w-100">
-            <div class="summoner-champion-card-info-title">
-              <div class="px-3">
-                <span>MissFortune</span> <br />
-                <small>The Bounty Hunter</small>
-              </div>
-            </div>
-            <div class="summoner-champion-card-info">
-              <div class="summoner-champion-card-info-mastery-level">
-                <img
-                  src="image/stat-icons/Champion_Mastery_Level_6_Square.png"
-                  alt=""
-                />
-              </div>
-              <div class="summoner-champion-card-info-details">
-                <span>Level 6 </span> <br />
-                <small>231875 pts</small>
-              </div>
-            </div>
+          <!-- =============== End Champions Fillter and Search =========== -->
+          <div
+            class="d-flex flex-wrap justify-content-evenly"
+            id="summoner-champion-container"
+          >
+            <!-- ========= Champion Card Container ======= -->
+
+            <!-- ========= Champion Card Container ======= -->
           </div>
         </div>
-        <!-- ========= Champion Card Container ======= -->
+        <!-- ============= End Summoner Champions Container ============= -->
       </div>
-      <!-- ============= End Summoner Champions Container ============= -->
     </div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
@@ -112,6 +344,327 @@
       crossorigin="anonymous"
     ></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
     <!-- <script src="index.js"></script> -->
+    <script>
+      var summoner_win_lose_options = {
+        series: [25, 15],
+        chart: {
+          type: "donut",
+        },
+        colors: ["#008000", "#ff0000"],
+        fill: {
+          colors: ["#008000", "#ff0000"],
+        },
+        labels: ["Win", "Lose"],
+        responsive: [
+          {
+            breakpoint: 480,
+            options: {
+              chart: {
+                width: 200,
+              },
+              legend: {
+                position: "bottom",
+              },
+            },
+          },
+        ],
+      };
+
+      var summoner_win_lose_chart = new ApexCharts(
+        document.querySelector("#summoner-match-win-lose-chart"),
+        summoner_win_lose_options
+      );
+      summoner_win_lose_chart.render();
+
+      var summoner_match_roles_chart_options = {
+        series: [
+          {
+            name: "Match",
+            data: [12, 11, 4, 6, 7],
+          },
+        ],
+        chart: {
+          type: "bar",
+          height: 170,
+          toolbar: {
+            show: false,
+          },
+        },
+        plotOptions: {
+          bar: {
+            borderRadius: 4,
+            horizontal: true,
+          },
+        },
+        dataLabels: {
+          enabled: false,
+        },
+        xaxis: {
+          categories: ["Tank", "Mage", "Assassin", "Marksman", "Tank"],
+          labels: {
+            style: {
+              colors: "white",
+            },
+          },
+        },
+        yaxis: {
+          max: 40,
+          tickAmount: 5,
+          labels: {
+            style: {
+              colors: "white",
+            },
+          },
+        },
+        title: {
+          text: "Match roles",
+          align: "left",
+          style: {
+            fontSize: "14px",
+            color: "white",
+          },
+        },
+      };
+
+      var summoner_match_roles_chart = new ApexCharts(
+        document.querySelector("#summoner-match-roles-chart"),
+        summoner_match_roles_chart_options
+      );
+      summoner_match_roles_chart.render();
+
+      var summoner_match_lane_chart_options = {
+        series: [
+          {
+            name: "Match",
+            data: [12, 11, 4, 6, 7],
+          },
+        ],
+        chart: {
+          type: "bar",
+          height: 170,
+          toolbar: {
+            show: false,
+          },
+        },
+        plotOptions: {
+          bar: {
+            borderRadius: 4,
+            horizontal: true,
+          },
+        },
+        dataLabels: {
+          enabled: false,
+        },
+        xaxis: {
+          categories: ["Top", "Jungle", "Mid", "Bot", "Support"],
+          labels: {
+            style: {
+              colors: "white",
+            },
+          },
+        },
+        yaxis: {
+          max: 40,
+          tickAmount: 5,
+          labels: {
+            style: {
+              colors: "white",
+            },
+          },
+        },
+        title: {
+          text: "Match lanes",
+          align: "left",
+          style: {
+            fontSize: "14px",
+            color: "white",
+          },
+        },
+      };
+
+      var summoner_match_lane_chart = new ApexCharts(
+        document.querySelector("#summoner-match-lane-chart"),
+        summoner_match_lane_chart_options
+      );
+      summoner_match_lane_chart.render();
+
+      let championsInfo = [
+        {
+          id: "Ahri",
+          name: "Ahri",
+          title: "the Nine-Tailed Fox",
+          tags: ["Mage", "Assassin"],
+        },
+        {
+          id: "Akali",
+          name: "Akali",
+          title: "the Rogue Assassin",
+          tags: ["Assassin"],
+        },
+        {
+          id: "Akshan",
+          name: "Akshan",
+          title: "the Rogue Sentinel",
+          tags: ["Marksman", "Assassin"],
+        },
+        {
+          id: "Alistar",
+          name: "Alistar",
+          title: "the Minotaur",
+          tags: ["Tank", "Support"],
+        },
+        {
+          id: "Amumu",
+          name: "Amumu",
+          title: "the Sad Mummy",
+          tags: ["Tank", "Mage"],
+        },
+        {
+          id: "Anivia",
+          name: "Anivia",
+          title: "the Cryophoenix",
+          tags: ["Mage", "Support"],
+        },
+        {
+          id: "AurelionSol",
+          name: "Aurelion Sol",
+          title: "The Star Forger",
+          tags: ["Mage"],
+        },
+        {
+          id: "Azir",
+          name: "Azir",
+          title: "the Emperor of the Sands",
+          tags: ["Mage", "Marksman"],
+        },
+        {
+          id: "Bard",
+          name: "Bard",
+          title: "the Wandering Caretaker",
+          tags: ["Support", "Mage"],
+        },
+        {
+          id: "Blitzcrank",
+          name: "Blitzcrank",
+          title: "the Great Steam Golem",
+          tags: ["Tank", "Fighter"],
+        },
+        {
+          id: "DrMundo",
+          name: "Dr. Mundo",
+          title: "the Madman of Zaun",
+          tags: ["Fighter", "Tank"],
+        },
+        {
+          id: "MonkeyKing",
+          name: "Wukong",
+          title: "the Monkey King",
+          tags: ["Fighter", "Tank"],
+        },
+        {
+          id: "Mordekaiser",
+          name: "Mordekaiser",
+          title: "the Iron Revenant",
+          tags: ["Fighter"],
+        },
+        {
+          id: "Morgana",
+          name: "Morgana",
+          title: "the Fallen",
+          tags: ["Mage", "Support"],
+        },
+        {
+          id: "JarvanIV",
+          name: "Jarvan IV",
+          title: "the Exemplar of Demacia",
+          tags: ["Tank", "Fighter"],
+        },
+        {
+          id: "Kaisa",
+          name: "Kai'Sa",
+          title: "Daughter of the Void",
+          tags: ["Marksman"],
+        },
+        {
+          id: "Khazix",
+          name: "Kha'Zix",
+          title: "the Voidreaver",
+          tags: ["Assassin"],
+        },
+        {
+          id: "KogMaw",
+          name: "Kog'Maw",
+          title: "the Mouth of the Abyss",
+          tags: ["Marksman", "Mage"],
+        },
+        {
+          id: "LeeSin",
+          name: "Lee Sin",
+          title: "the Blind Monk",
+          tags: ["Fighter", "Assassin"],
+        },
+        {
+          id: "MasterYi",
+          name: "Master Yi",
+          title: "the Wuju Bladesman",
+          tags: ["Assassin", "Fighter"],
+        },
+        {
+          id: "MissFortune",
+          name: "Miss Fortune",
+          title: "the Bounty Hunter",
+          tags: ["Marksman"],
+        },
+        {
+          id: "Nunu",
+          name: "Nunu & Willump",
+          title: "the Boy and His Yeti",
+          tags: ["Tank", "Fighter"],
+        },
+      ];
+
+      let summonerChampionsContainer = document.getElementById(
+        "summoner-champion-container"
+      );
+
+      for (let cham of championsInfo) {
+        let { name, title, tags, id } = cham;
+        let randomLevel = Math.floor(Math.random() * 7);
+        let championCard = `
+                      <div
+                        class="summoner-champion-card d-flex align-items-end flex-wrap"
+                        style="
+                          background-image: url(http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${id}_0.jpg);
+                        "
+                      >
+                        <div class="w-100">
+                          <div class="summoner-champion-card-info-title">
+                            <div class="px-3">
+                              <span>${name}</span> <br />
+                              <small>${title}</small>
+                            </div>
+                          </div>
+                          <div class="summoner-champion-card-info">
+                            <div class="summoner-champion-card-info-mastery-level">
+                              <img
+                                src="image/stat-icons/Champion_Mastery_Level_${randomLevel}_Square.png"
+                                alt=""
+                              />
+                            </div>
+                            <div class="summoner-champion-card-info-details">
+                              <span>Level ${randomLevel} </span> <br />
+                              <small>231875 pts</small>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    `;
+
+        summonerChampionsContainer.innerHTML += championCard;
+      }
+    </script>
   </body>
 </html>

@@ -1,15 +1,128 @@
-/* ================ Summoner ChampionsContainer ==================== */
+.summoner {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.summoner-container {
+  display: block;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+}
+/* ================ Summoner Infomation ================= */
+.summoner-infomation-container {
+  width: 100%;
+}
 
+.summoner-header-profile-icon {
+  width: 12em;
+  height: 12em;
+  border: 5px solid #ffc400;
+  border-radius: 50%;
+}
+
+.summoner-profile-banner {
+  width: 11em;
+  height: 11em;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+}
+
+.summoner-profile-level-container {
+  height: 1px;
+}
+
+.summoner-profile-level {
+  position: relative;
+  border: 1px solid rgb(0, 0, 0);
+  color: black;
+  top: -20px;
+  width: 50px;
+  background-color: white;
+}
+
+.summoner-header h1 {
+  font-size: 25px;
+  font-weight: 700;
+  font-style: italic;
+  margin-top: 10px;
+}
+
+.summoner-rank img {
+  width: 10em;
+}
+
+.summoner-rank span,
+.summoner-rank small {
+  font-style: italic;
+}
+
+.summoner-rank .summoner-rank-tier {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.summoner-rank small {
+  color: gray;
+}
+
+/* Summoner match summory */
+.summoner-match-summary h3 {
+  text-transform: uppercase;
+  font-size: 30px;
+  letter-spacing: 0.2em;
+  font-weight: 800;
+  font-style: italic;
+}
+
+#summoner-match-roles-chart,
+#summoner-match-lane-chart {
+  width: 30em;
+}
+/* ================ End Summoner Infomation ================= */
+
+/* ================ Summoner Navbar ================ */
+
+.summoner-info-nav .nav-item {
+  margin: 0 2px;
+}
+
+.summoner-info-nav .nav-item:hover {
+  background-color: white;
+  color: black;
+}
+
+.summoner-info-nav .nav-link {
+  font-style: italic;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgb(255, 255, 255);
+  border: 1px solid white;
+  border-bottom: 1px solid black;
+}
+
+.summoner-info-nav .nav-item:hover .nav-link {
+  color: black;
+}
+
+/* ================ End Summoner Navbar ================ */
+
+/* ================ Summoner Champions Container ==================== */
+.summoner-champions-container {
+  /* width: 100vw; */
+}
 /* ======= Champion Card ========== */
 .summoner-champion-card {
   font-family: Times, Times New Roman, serif;
   margin: 0 10px;
   height: 30em;
   width: 17em;
-  box-shadow: 10px 10px 15px black;
+  box-shadow: 10px 10px 15px rgb(0, 0, 0);
   transition: ease-in-out 0.2s;
   cursor: pointer;
   margin: 10px;
+  cursor: pointer;
 }
 .summoner-champion-card-info-title {
   background-color: black;

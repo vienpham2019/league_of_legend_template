@@ -23,6 +23,10 @@ html {
 /* ============ End Champions Header =============== */
 
 /* ============ Champions Filter =================== */
+.champions-filter {
+  font-family: Times, Times New Roman, serif;
+}
+
 .champions-filter-container {
   padding: 0 4em;
 }
@@ -166,12 +170,13 @@ html {
 .champions-filer-reset {
   background-color: rgba(0, 0, 0, 0.7);
   margin: 10px;
-  height: 35px;
-  width: 35px;
+  height: 38px;
+  width: 38px;
   font-size: 13px;
   border: 1px solid black;
   border-radius: 5px;
   color: rgb(255, 255, 255);
+  cursor: pointer;
 }
 /* --- End Reset Btn --- */
 
