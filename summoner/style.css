@@ -108,6 +108,13 @@
 
 /* ================ End Summoner Navbar ================ */
 
+/* ================ Summoner Champions Filter ============ */
+#dropdownMenuButton1 {
+  background-color: white;
+  color: black;
+}
+/* ================ End Summoner Champions Filter ============ */
+
 /* ================ Summoner Champions Container ==================== */
 .summoner-champions-container {
   /* width: 100vw; */
@@ -170,3 +177,117 @@
 /* ======= End Champion Card =========  */
 
 /* ================ End Summoner Champions Container ==================== */
+
+/* ================ Summoner Match History Container ==================== */
+.match-history-card {
+  border: 1px solid white;
+  padding: 10px;
+}
+
+.match-history-card .match-header {
+  margin-right: 20px;
+}
+
+.match-history-card .match-header .match-lane {
+  height: 2em;
+  width: 7em;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 10px;
+  background-color: rgb(58, 58, 58);
+}
+
+.match-history-card .match-header .match-lane img {
+  height: 1em;
+  width: 1em;
+  border: none;
+  padding: 0;
+}
+
+.match-history-card .match-header .match-lane span {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.match-history-card .match-header img {
+  border-radius: 50%;
+  border: 1px solid #ffc400;
+  width: 7em;
+  height: 7em;
+}
+
+.match-history-card .match-header .match-header-level {
+  width: 2em;
+  height: 2em;
+  border: 1px solid #ffc400;
+  border-radius: 50%;
+  text-align: center;
+  position: relative;
+  left: 80px;
+  top: -30px;
+  background-color: black;
+}
+
+.match-history-card .match-header .match-header-level span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+}
+
+/* .match-history-card .match-win-lose {
+  border: 1px solid white;
+} */
+
+.match-history-card .match-win-lose span {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-style: italic;
+  letter-spacing: 0.2em;
+  font-size: 20px;
+}
+
+.match-history-card .match-win-lose .text-win {
+  color: rgb(0, 162, 255);
+}
+
+.match-history-card .match-win-lose .text-lose {
+  color: rgb(189, 5, 5);
+}
+.match-history-card .match-win-lose .match-spells {
+  margin: 10px 0;
+}
+.match-history-card .match-win-lose .match-spells img {
+  width: 2em;
+  margin: 0 3px;
+}
+
+.match-history-card .match-win-lose .match-kda span {
+  font-size: 15px;
+}
+
+.match-history-card .match-win-lose .match-kda span .kda-bad {
+  color: red;
+}
+
+.match-history-card .match-items {
+  width: 14em;
+}
+
+.match-history-card .match-items .item {
+  border: 1px solid white;
+  width: 3em;
+  height: 3em;
+  margin: 5px;
+}
+
+.match-history-card .match-items .item img {
+  border: 1px solid white;
+  width: 3em;
+  height: 3em;
+}
+/* ================ End Summoner Match History Container ==================== */

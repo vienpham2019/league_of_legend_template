@@ -109,7 +109,7 @@
         <!-- ============= End Summoner Infomarion Navbar ============ -->
 
         <!-- ============= Summoner Champions Container ============= -->
-        <div class="summoner-champions-container w-100">
+        <div class="summoner-champions-container w-100 d-none">
           <!-- =============== Champions Header ============ -->
           <div class="champions-header text-center py-5">
             <span>Choose your</span>
@@ -317,7 +317,15 @@
 
               <!-- Reset Filter -->
               <div class="d-flex align-items-center">
-                <div class="champions-filer-reset d-flex align-items-center">
+                <div
+                  class="
+                    champions-filer-reset
+                    d-flex
+                    align-items-center
+                    bg-light
+                    text-dark
+                  "
+                >
                   <i class="fas fa-redo mx-auto"></i>
                 </div>
                 <small>Reset Filter</small>
@@ -336,6 +344,87 @@
           </div>
         </div>
         <!-- ============= End Summoner Champions Container ============= -->
+
+        <!-- ============= Summoner Match History Container ================= -->
+        <div class="w-100">
+          <!-- =============== Summoner Match History Header ============ -->
+          <div class="champions-header text-center py-5">
+            <span>Choose your</span>
+            <h1>Match History</h1>
+          </div>
+          <!-- =============== End Summoner Match History Header ============ -->
+
+          <!-- =============== Summoner Match History Cards Container ============ -->
+          <div class="container">
+            <div class="match-history-card d-flex">
+              <!-- === Header ==== -->
+              <div class="match-header">
+                <div class="d-flex align-items-center match-lane">
+                  <img
+                    src="https://fastcdn.mobalytics.gg/assets/common/icons/lol-roles/16-jg-faded.svg"
+                    alt=""
+                  />
+                  <span class="mx-2">Jungle</span>
+                </div>
+                <img
+                  src="http://ddragon.leagueoflegends.com/cdn/11.22.1/img/champion/Jax.png"
+                  alt=""
+                />
+                <div class="match-header-level">
+                  <span>12</span>
+                </div>
+              </div>
+              <!-- === End Header ==== -->
+
+              <!-- == Win / Lose == -->
+              <div class="match-win-lose d-flex align-items-center">
+                <div>
+                  <span class="text-win">Victory</span>
+                  <div class="match-spells">
+                    <img
+                      src="http://ddragon.leagueoflegends.com/cdn/11.22.1/img/spell/SummonerFlash.png"
+                      alt=""
+                    />
+                    <img
+                      src="http://ddragon.leagueoflegends.com/cdn/11.22.1/img/spell/SummonerFlash.png"
+                      alt=""
+                    />
+                  </div>
+                </div>
+
+                <div class="match-kda mx-2">
+                  <span>5/5/2</span> <br />
+                  <span>
+                    <span class="kda-bad">1.4</span>
+                    <span class="text-muted">KDA</span>
+                  </span>
+                </div>
+              </div>
+              <!-- == End Win / Lose == -->
+
+              <!-- == Items === -->
+              <div class="match-items mx-3 d-flex align-items-center">
+                <div class="d-flex flex-wrap">
+                  <div class="item">
+                    <img
+                      src="http://ddragon.leagueoflegends.com/cdn/11.22.1/img/spell/SummonerFlash.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="item"></div>
+                  <div class="item"></div>
+
+                  <div class="item"></div>
+                  <div class="item"></div>
+                  <div class="item"></div>
+                </div>
+              </div>
+              <!-- == End Items === -->
+            </div>
+          </div>
+          <!-- =============== End Summoner Match History Cards Container ============ -->
+        </div>
+        <!-- ============= End Summoner Match History Container ================= -->
       </div>
     </div>
     <script
