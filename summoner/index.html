@@ -43,19 +43,16 @@
                   d-flex
                   align-items-center
                 "
+                style="
+                  --summoner-profile-icon-rank-img: url('https://fastcdn.mobalytics.gg/assets/lol/images/rank-icon/frame/GRANDMASTER.png');
+                "
               >
-                <div
-                  class="summoner-profile-banner mx-auto rounded-circle"
-                  style="
-                    background-image: url(http://ddragon.leagueoflegends.com/cdn/11.20.1/img/profileicon/4571.png);
-                  "
-                ></div>
+                <img
+                  src="http://ddragon.leagueoflegends.com/cdn/11.20.1/img/profileicon/4571.png"
+                  alt=""
+                />
               </div>
-              <div class="summoner-profile-level-container">
-                <div class="summoner-profile-level mx-auto">
-                  <span>145</span>
-                </div>
-              </div>
+
               <h1>Soda Is A Cat</h1>
             </div>
             <!-- End Profile Icon -->
@@ -63,23 +60,25 @@
             <!-- Summoner Rank -->
             <div class="pt-4 text-center">
               <div class="summoner-rank">
-                <span class="text-danger">Ranked</span>
                 <div class="">
                   <img
                     src="/summoner/image/ranked-emblems/Emblem_CHALLENGE.png"
                     alt=""
                   />
                 </div>
-                <span class="summoner-rank-tier"> Challenger I </span>
-                <br />
-                <small>1246 LP</small>
+                <div>
+                  <span class="text-muted">Ranked</span> <br />
+                  <span class="summoner-rank-tier"> Challenger I </span> .
+                  <small>1246 LP</small>
+                </div>
+                <div>
+                  <span>24 <span class="text-muted">W</span></span>
+                  <span> <span class="text-muted">L</span></span> .
+                  <span>59 %</span>
+                </div>
               </div>
             </div>
             <!-- End Summoner Rank -->
-
-            <!-- Summoner Win Lose -->
-            <div class="my-auto" id="summoner-match-win-lose-chart"></div>
-            <!-- End Summoner Win Lose -->
 
             <!-- Summoner Statistics -->
             <div class="w-100 text-center summoner-match-summary mt-4">
@@ -356,71 +355,197 @@
 
           <!-- =============== Summoner Match History Cards Container ============ -->
           <div class="container">
-            <div class="match-history-card d-flex">
-              <!-- === Header ==== -->
-              <div class="match-header">
-                <div class="d-flex align-items-center match-lane">
+            <div class="match-history-card match-history-card-victory">
+              <div class="match-card-title">
+                <span>standard</span>
+                <small class="mx-2">1 day ago</small>
+              </div>
+              <hr class="m-1" />
+              <div class="d-flex justify-content-evenly">
+                <!-- === Header ==== -->
+                <div class="match-header">
+                  <div class="d-flex align-items-center match-lane">
+                    <img
+                      src="https://fastcdn.mobalytics.gg/assets/common/icons/lol-roles/16-jg-faded.svg"
+                      alt=""
+                    />
+                    <span class="mx-2">Jungle</span>
+                  </div>
                   <img
-                    src="https://fastcdn.mobalytics.gg/assets/common/icons/lol-roles/16-jg-faded.svg"
+                    src="http://ddragon.leagueoflegends.com/cdn/11.22.1/img/champion/Jax.png"
                     alt=""
                   />
-                  <span class="mx-2">Jungle</span>
+                  <div class="match-header-level">
+                    <span>12</span>
+                  </div>
                 </div>
-                <img
-                  src="http://ddragon.leagueoflegends.com/cdn/11.22.1/img/champion/Jax.png"
-                  alt=""
-                />
-                <div class="match-header-level">
-                  <span>12</span>
-                </div>
-              </div>
-              <!-- === End Header ==== -->
+                <!-- === End Header ==== -->
 
-              <!-- == Win / Lose == -->
-              <div class="match-win-lose d-flex align-items-center">
-                <div>
-                  <span class="text-win">Victory</span>
-                  <div class="match-spells">
-                    <img
-                      src="http://ddragon.leagueoflegends.com/cdn/11.22.1/img/spell/SummonerFlash.png"
-                      alt=""
-                    />
-                    <img
-                      src="http://ddragon.leagueoflegends.com/cdn/11.22.1/img/spell/SummonerFlash.png"
-                      alt=""
-                    />
+                <!-- == Win / Lose == -->
+                <div class="match-win-lose d-flex align-items-center">
+                  <div>
+                    <span class="text-win">Victory</span>
+                    <div class="match-spells">
+                      <img
+                        src="http://ddragon.leagueoflegends.com/cdn/11.22.1/img/spell/SummonerFlash.png"
+                        alt=""
+                      />
+                      <img
+                        src="http://ddragon.leagueoflegends.com/cdn/11.22.1/img/spell/SummonerFlash.png"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                </div>
+                <!-- == End Win / Lose == -->
+
+                <div class="match-kda mx-3 d-flex align-items-center">
+                  <div>
+                    <span>5/5/2</span> <br />
+                    <span>
+                      <span class="kda-bad">1.4</span>
+                      <span class="text-muted">KDA</span>
+                    </span>
+                    <div class="w-100">
+                      <div>
+                        <img
+                          src="http://ddragon.leagueoflegends.com/cdn/5.5.1/img/ui/minion.png"
+                          alt=""
+                        /><span>33</span>
+                      </div>
+                      <div>
+                        <img
+                          src="http://ddragon.leagueoflegends.com/cdn/5.5.1/img/ui/gold.png"
+                          alt=""
+                        />
+                        <span>14122</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
-                <div class="match-kda mx-2">
-                  <span>5/5/2</span> <br />
-                  <span>
-                    <span class="kda-bad">1.4</span>
-                    <span class="text-muted">KDA</span>
-                  </span>
+                <!-- == Items === -->
+                <div class="match-items mx-3 d-flex align-items-center">
+                  <div class="d-flex flex-wrap" id="items">
+                    <!-- Item -->
+                    <!-- Item -->
+                  </div>
                 </div>
-              </div>
-              <!-- == End Win / Lose == -->
+                <!-- == End Items === -->
 
-              <!-- == Items === -->
-              <div class="match-items mx-3 d-flex align-items-center">
-                <div class="d-flex flex-wrap">
-                  <div class="item">
+                <!-- == Match Summoner Participants === -->
+                <div
+                  class="match-summoner-participants"
+                  id="match-summoner-participants"
+                >
+                  <div
+                    class="match-summoner-score d-flex justify-content-center"
+                  >
+                    <span>20 / 16 / 10</span>
                     <img
-                      src="http://ddragon.leagueoflegends.com/cdn/11.22.1/img/spell/SummonerFlash.png"
+                      src="http://ddragon.leagueoflegends.com/cdn/5.5.1/img/ui/score.png"
                       alt=""
                     />
+                    <span>30 / 12 / 03</span>
                   </div>
-                  <div class="item"></div>
-                  <div class="item"></div>
+                  <!-- Match Summoner Participant Content -->
+                  <!-- End Match Summoner Participant Content -->
+                </div>
+                <!-- == End Match Summoner Participants === -->
 
-                  <div class="item"></div>
-                  <div class="item"></div>
-                  <div class="item"></div>
+                <div
+                  class="
+                    match-summoner-participant-arrow
+                    d-flex
+                    align-items-center
+                  "
+                >
+                  <i class="fas fa-chevron-down"></i>
                 </div>
               </div>
-              <!-- == End Items === -->
             </div>
+
+            <!-- =========== Match Card Details ============= -->
+            <div class="match-card-details d-flex flex-wrap">
+              <div class="w-50">
+                <div
+                  class="
+                    match-card-content
+                    d-flex
+                    justify-content-evenly
+                    align-items-center
+                  "
+                >
+                  <!-- === Lane ==== -->
+                  <div class="d-flex align-items-center">
+                    <img
+                      src="https://fastcdn.mobalytics.gg/assets/common/icons/lol-roles/16-jg-faded.svg"
+                      alt=""
+                    />
+                  </div>
+                  <!-- === End Lane === -->
+
+                  <div class="d-flex align-items-center">
+                    <!-- === Header ==== -->
+                    <div class="match-header">
+                      <div class="d-flex align-items-center match-lane"></div>
+                      <img
+                        src="http://ddragon.leagueoflegends.com/cdn/11.22.1/img/champion/Jax.png"
+                        alt=""
+                      />
+                      <div class="match-header-level">
+                        <span>12</span>
+                      </div>
+                    </div>
+                    <!-- === End Header ==== -->
+
+                    <!-- === Spells === -->
+                    <div class="match-spells mx-2">
+                      <img
+                        src="http://ddragon.leagueoflegends.com/cdn/11.22.1/img/spell/SummonerFlash.png"
+                        alt=""
+                      />
+                      <img
+                        src="http://ddragon.leagueoflegends.com/cdn/11.22.1/img/spell/SummonerFlash.png"
+                        alt=""
+                      />
+                    </div>
+                    <!-- === End Spells === -->
+
+                    <!-- === Name === -->
+                    <div class="match-summoner-name">
+                      <span>TF Blade</span>
+                    </div>
+                    <!-- === End Name === -->
+                  </div>
+
+                  <!-- === Items === -->
+                  <div class="match-items">
+                    <div class="d-flex flex-wrap" id="items1">
+                      <!-- Item -->
+                      <!-- Item -->
+                    </div>
+                    <div class="d-flex justify-content-between">
+                      <div class="d-flex align-items-center">
+                        <img
+                          src="https://fastcdn.mobalytics.gg/assets/lol/images/gpi-icon/normal/minion.svg"
+                          alt=""
+                        /><small>33</small>
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <img
+                          src="https://fastcdn.mobalytics.gg/assets/lol/images/gpi-icon/normal/farming.svg"
+                          alt=""
+                        />
+                        <small>14122</small>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- === End Items === -->
+                </div>
+              </div>
+            </div>
+            <!-- =========== End Match Card Details ============= -->
           </div>
           <!-- =============== End Summoner Match History Cards Container ============ -->
         </div>
@@ -754,6 +879,102 @@
 
         summonerChampionsContainer.innerHTML += championCard;
       }
+
+      let items_id = [3078, 3153, 3111, 1057, 3053, 0, 2052];
+      let items_container = document.getElementById("items");
+      let items_inner_html = "";
+      for (let i of items_id) {
+        if (i === 0) items_inner_html += `<div class="item"></div>`;
+        else
+          items_inner_html += `
+              <div class="item">
+                <img
+                    src="http://ddragon.leagueoflegends.com/cdn/11.22.1/img/item/${i}.png"
+                    alt=""/>
+              </div>`;
+      }
+      items_container.innerHTML += items_inner_html;
+
+      document.getElementById("items1").innerHTML += items_inner_html;
+
+      let toDate = new Date();
+      // let matchDate = new Date(new Date().setDate(new Date().getDate() - 1));
+      let matchDate = new Date(1635160875764);
+      let duration = new Date();
+      duration.setTime(1988.67822265625);
+      matchDate.setHours(12);
+
+      let diff = toDate.getTime() - matchDate.getTime();
+      var days_diff = Math.ceil(diff / (1000 * 3600 * 24));
+      let hours_diff = Math.ceil(diff / 3600000);
+
+      let match_summoner_participants = document.getElementById(
+        "match-summoner-participants"
+      );
+      let match_summoner_participants_inner_html = "";
+
+      let roles = ["top", "jg", "mid", "bot", "sup"];
+      let summonerNames = [
+        "Liquid Robin",
+        "Nostereleven",
+        "Souless",
+        "Cottontail",
+        "Soda Is A Cat",
+        "BC Socks",
+        "YippeeMaokaiYay",
+        "Kiting is Hard",
+        "iCopyKeane",
+        "casparwu",
+      ];
+      let championsName = [
+        "Ahri",
+        "Ashe",
+        "Azir",
+        "Corki",
+        "Draven",
+        "Ezreal",
+        "Fiora",
+        "Garen",
+        "Irelia",
+        "Kalista",
+      ];
+      for (i = 0; i < 5; i++) {
+        match_summoner_participants_inner_html += `<div
+                    class="
+                      match-summoner-participant-content
+                      d-flex
+                      align-items-center
+                    "
+                  >
+                    <span class="${i === 2 && "text-white"}">${
+          summonerNames[i * 2]
+        }</span>
+                    <img
+                      src="http://ddragon.leagueoflegends.com/cdn/11.22.1/img/champion/${
+                        championsName[i * 2]
+                      }.png"
+                      alt=""
+                    />
+                    <div class="match-summoner-participant-content-role">
+                      <img
+                        src="https://fastcdn.mobalytics.gg/assets/common/icons/lol-roles/16-${
+                          roles[i]
+                        }-faded.svg"
+                        alt=""
+                      />
+                    </div>
+                    <img
+                      src="http://ddragon.leagueoflegends.com/cdn/11.22.1/img/champion/${
+                        championsName[i * 2 + 1]
+                      }.png"
+                      alt=""
+                    />
+                    <span>${summonerNames[i * 2 + 1]}</span>
+                  </div>`;
+      }
+
+      match_summoner_participants.innerHTML +=
+        match_summoner_participants_inner_html;
     </script>
   </body>
 </html>

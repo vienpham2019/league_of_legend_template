@@ -15,10 +15,62 @@
 }
 
 .summoner-header-profile-icon {
-  width: 12em;
-  height: 12em;
-  border: 5px solid #ffc400;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  width: 11.2rem;
+  height: 12.8rem;
+  position: relative;
+  margin: 0 auto 0.8rem;
+}
+
+.summoner-header-profile-icon img {
+  width: 6rem;
+  height: 6rem;
+  position: absolute;
   border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.summoner-header-profile-icon:after {
+  content: "";
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: var(--summoner-profile-icon-rank-img) center center no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
 }
 
 .summoner-profile-banner {
@@ -180,17 +232,38 @@
 
 /* ================ Summoner Match History Container ==================== */
 .match-history-card {
-  border: 1px solid white;
-  padding: 10px;
+  border: 1px solid rgb(90, 89, 89);
+  padding: 10px 20px;
+  cursor: pointer;
 }
 
+.match-history-card-victory {
+  background-image: linear-gradient(to right, rgb(12, 97, 122), rgb(0, 47, 68));
+}
+
+.match-history-card-defeat {
+  background-image: linear-gradient(to right, rgb(116, 46, 24), rgb(41, 0, 0));
+}
+
+/* --- Title --- */
+.match-history-card .match-card-title span {
+  text-transform: uppercase;
+  font-style: italic;
+}
+
+.match-history-card .match-card-title small {
+  color: gray;
+}
+/* --- End Title --- */
+
+/* --- Header --- */
 .match-history-card .match-header {
   margin-right: 20px;
 }
 
 .match-history-card .match-header .match-lane {
-  height: 2em;
-  width: 7em;
+  height: 1.5em;
+  width: 6em;
   padding: 10px;
   margin: 10px 0;
   border-radius: 10px;
@@ -205,7 +278,7 @@
 }
 
 .match-history-card .match-header .match-lane span {
-  font-size: 13px;
+  font-size: 10px;
   text-transform: uppercase;
   letter-spacing: 0.2em;
   font-weight: 500;
@@ -215,19 +288,19 @@
 .match-history-card .match-header img {
   border-radius: 50%;
   border: 1px solid #ffc400;
-  width: 7em;
-  height: 7em;
+  width: 5em;
+  height: 5em;
 }
 
 .match-history-card .match-header .match-header-level {
-  width: 2em;
-  height: 2em;
+  width: 1.6em;
+  height: 1.6em;
   border: 1px solid #ffc400;
   border-radius: 50%;
   text-align: center;
   position: relative;
-  left: 80px;
-  top: -30px;
+  left: 60px;
+  top: -25px;
   background-color: black;
 }
 
@@ -238,7 +311,9 @@
   transform: translate(-50%, -50%);
   margin: 0;
 }
+/* --- End Header --- */
 
+/* --- Match Win Lose --- */
 /* .match-history-card .match-win-lose {
   border: 1px solid white;
 } */
@@ -265,17 +340,29 @@
   width: 2em;
   margin: 0 3px;
 }
+/* --- End Match Win Lose --- */
 
-.match-history-card .match-win-lose .match-kda span {
+/* --- Match KDA --- */
+.match-history-card .match-kda span {
   font-size: 15px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-style: italic;
+  letter-spacing: 0.2em;
 }
 
-.match-history-card .match-win-lose .match-kda span .kda-bad {
+.match-history-card .match-kda img {
+  width: 2.3em;
+}
+
+.match-history-card .match-kda span .kda-bad {
   color: red;
 }
+/* --- End Match KDA --- */
 
+/* --- Match Items --- */
 .match-history-card .match-items {
-  width: 14em;
+  width: 16em;
 }
 
 .match-history-card .match-items .item {
@@ -290,4 +377,129 @@
   width: 3em;
   height: 3em;
 }
+/* --- End Match Items --- */
+
+/* --- Match Summoner Participants --- */
+.match-summoner-participants .match-summoner-score {
+  height: 40px;
+}
+
+.match-summoner-participants .match-summoner-score span {
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.match-summoner-participants .match-summoner-score img {
+  width: 40px;
+  margin-left: 13px;
+}
+
+.match-summoner-participant-content {
+  height: 1.5em;
+}
+
+.match-summoner-participant-content span {
+  margin: 0 10px;
+  color: gray;
+  font-size: 13px;
+  width: 80px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.match-summoner-participant-content img {
+  width: 2em;
+  border: 1px solid gold;
+  border-radius: 50%;
+}
+
+.match-summoner-participant-content
+  .match-summoner-participant-content-role
+  img {
+  margin: 0 10px;
+  width: 1em;
+  border: none;
+  border-radius: 0;
+}
+
+.match-summoner-participant-arrow {
+  color: gold;
+}
+/* --- End Match Summoner Participants --- */
+
+/* ======= Match Card Details ======== */
+.match-card-details {
+  /* padding: 10px 20px; */
+  background-color: black;
+}
+
+.match-card-details .match-card-content {
+  border: 1px solid white;
+}
+
+/* --- Header --- */
+.match-card-details .match-card-content .match-header {
+  margin-right: 20px;
+  height: 3em;
+}
+
+.match-card-details .match-header img {
+  border-radius: 50%;
+  border: 1px solid #ffc400;
+  width: 3em;
+  height: 3em;
+}
+
+.match-card-details .match-card-content .match-header .match-header-level {
+  width: 1.5em;
+  height: 1.5em;
+  border: 1px solid #ffc400;
+  border-radius: 50%;
+  text-align: center;
+  position: relative;
+  left: 35px;
+  top: -25px;
+  background-color: black;
+}
+
+.match-card-details .match-card-content .match-header .match-header-level span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  font-size: 12px;
+}
+/* --- End Header --- */
+
+/* --- Spells --- */
+.match-card-details .match-card-content .match-spells img {
+  display: block;
+  margin: 3px;
+  width: 1.5em;
+}
+/* --- End Spells --- */
+
+/* --- Summoner Name --- */
+.match-card-details .match-card-content .match-summoner-name span {
+  font-size: 12px;
+  font-weight: bold;
+  font-style: italic;
+  letter-spacing: 0.2em;
+}
+/* --- End Summoner Name --- */
+
+/* --- Items --- */
+.match-card-details .match-card-content .match-items .item {
+  width: 2em;
+}
+.match-card-details .match-card-content .match-items .item img {
+  width: 2em;
+  margin: 0 2px;
+}
+/* --- End Items --- */
+
+/* ======= End Match Card Details ======== */
+
 /* ================ End Summoner Match History Container ==================== */

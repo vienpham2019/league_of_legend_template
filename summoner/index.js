@@ -24,6 +24,9 @@ let summoner = {
   hotStreak: false,
   matchsID: [
     {
+      game_datetime: 1635160875764,
+      game_length: 2121.075927734375,
+      tft_game_type: "standard",
       teamId: 100,
 
       champLevel: 18,
